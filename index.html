@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marquee</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .position {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    .wrap-box {
+      width: 200px;
+      height: 30px;
+      border: 1px solid red;
+      overflow: hidden;
+    }
+
+    .marquee-container {
+      white-space: nowrap;
+      line-height: 30px;
+      /* 秒数计算：`${item.length * 5)s} */
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-block;
+      width: 200px;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        /* 距离计算：`-${item.length * 100}%` */
+        transform: translateX(-500%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap-box position">
+    <div class="marquee-container">
+      <div class="marquee-item">小明抽中了法拉利一辆</div>
+      <div class="marquee-item">小红抽中了保时捷一辆</div>
+      <div class="marquee-item">小花抽中了视频月卡一张</div>
+      <div class="marquee-item">小月抽中了积分*500</div>
+      <div class="marquee-item">小A抽中了扑克牌一副</div>
+    </div>
+  </div>
+</body>
+
+</html>
